@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Collection;
 
-@ReactModule(name="VKAuthModule")
+@ReactModule(name = VKAuthModule.NAME)
 public class VKAuthModule extends ReactContextBaseJavaModule implements ActivityEventListener {
     private static final String E_ACTIVITY_DOES_NOT_EXIST = "E_ACTIVITY_DOES_NOT_EXIST";
     private static final String E_NOT_INITIALIZED = "E_NOT_INITIALIZED";
@@ -29,6 +29,8 @@ public class VKAuthModule extends ReactContextBaseJavaModule implements Activity
     private static final String M_NOT_INITIALIZED = "VK SDK must be initialized first";
     private static final String E_VK_CANCELED = "E_VK_CANCELED";
     private static final String E_VK_UNKNOWN = "E_VK_UNKNOWN";
+
+    public static final String NAME = "VkontakteManager";
 
     private Promise loginPromise;
     private boolean isInitialized = false;
@@ -46,7 +48,7 @@ public class VKAuthModule extends ReactContextBaseJavaModule implements Activity
 
     @Override
     public String getName() {
-        return "VkontakteManager";
+        return NAME;
     }
 
     @Nullable
